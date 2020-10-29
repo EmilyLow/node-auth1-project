@@ -11,7 +11,7 @@ const db = require("./database/config");
 const usersRouter = require("./users/users-router");
 
 const server = express();
-const port = process.env.PORT||5000;
+const port = 5000;
 
 
 //!!Is this where these "activate". Do they need to be used anywhere else for their core functionlity?
@@ -24,7 +24,7 @@ server.use(express.json());
 server.use(session({
     resave: false,
     saveUninitialized: false,
-    secret: "keep it secret, keep it safe",
+    secret: "this is not a secret yet",
     store: new KnexSessionStore({
         knex: db,
         createtable: true,
